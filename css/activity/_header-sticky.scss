@@ -1,0 +1,33 @@
+.header-sticky {
+  .header {
+    background-color: var(--lightblue);
+  }
+
+  // .header__grid::after {
+  //   opacity: 0;
+  // }
+
+  // .header__logo .logotype svg {
+  //   width: 102px;
+  // }
+
+  // .main-navigation__link {
+  //   height: 64px;
+  // }
+
+  // .hero__image {
+  //   z-index: initial;
+  // }
+
+  @media (max-width: 1379px) {
+    .header {
+      padding-top: 10px;
+    }
+    .header__logotype {
+      width: 60px;
+    }
+    .header::after {
+      opacity: 0.3;
+    }
+  }
+}

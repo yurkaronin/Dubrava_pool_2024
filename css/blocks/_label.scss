@@ -1,0 +1,25 @@
+.label {
+  display: flex;
+  margin: 0;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 143%;
+  color: var(--lightblue);
+  position: relative;
+  max-width: max-content;
+  align-items: center;
+  &::after {
+    content: "";
+    display: block;
+    background: var(--lightblue);
+    width: 80px;
+    height: 2px;
+    margin-left: 10px;
+  }
+
+  @media (max-width: 767px) {
+    &::after {
+      width: 50px;
+    }
+  }
+}
