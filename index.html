@@ -9,6 +9,13 @@
   <link rel="shortcut icon" href="./favicon.png" type="image/x-icon">
 
   <title>Бассейн Дубрава</title>
+
+
+  <!-- стили  -->
+  <link rel="stylesheet" href="./libs/simplebar.css" />
+  <link rel="stylesheet" href="./libs/swiper-bundle.min.css" />
+
+  <!-- библиотеки  -->
   <link rel="stylesheet" href="./css/main.css" />
 
 </head>
@@ -157,9 +164,91 @@
   </div>
 
   <main class="main">
-    <div class="wrapper">
-      <a href="#" class="call-link mobile-hide" data-target="modal-call-back">Позвонить мне!</a>
-    </div>
+
+    <!-- слайдер главной страницы -->
+    <section class="hero">
+
+      <!-- слайдер с фотографиями на фоне  -->
+      <div class="hero__photo-slider">
+        <div class="swiper js-hero-photo-slider">
+          <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+              <div class="hero__photo">
+                <img src="./img/hero-slider/1.jpg" alt="#" loading="lazy">
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="hero__photo">
+                <img src="./img/hero-slider/2.jpg" alt="#" loading="lazy">
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="hero__photo">
+                <img src="./img/hero-slider/3.jpg" alt="#" loading="lazy">
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <div class="hero__text-slider">
+        <div class="wrapper">
+          <!-- Swiper -->
+          <div class="swiper js-hero-text-slider">
+
+            <div class="swiper-wrapper">
+
+              <div class="swiper-slide">
+                <div class="hero__details">
+                  <p class="hero__text">Все бассейны оборудованы современной системой очистки и обогрева</p>
+                  <h2 class="hero__title title">Насладитесь отдыхом у бассейна</h2>
+                  <a href="#" class="button hero__button"><span>забронировать</span></a>
+                </div>
+              </div>
+
+              <div class="swiper-slide">
+                <div class="hero__details">
+                  <p class="hero__text">Все бассейны оборудованы современной системой очистки и обогрева</p>
+                  <h2 class="hero__title title">Еще один заголовок, который может быть длинней чем одна строка</h2>
+                  <a href="#" class="button hero__button"><span>забронировать</span></a>
+                </div>
+              </div>
+
+              <div class="swiper-slide">
+                <div class="hero__details">
+                  <p class="hero__text">Все бассейны оборудованы современной системой очистки и обогрева</p>
+                  <h2 class="hero__title title">Насладитесь отдыхом у бассейна еще раз</h2>
+                  <a href="#" class="button hero__button"><span>забронировать</span></a>
+                </div>
+              </div>
+
+            </div>
+
+            <button class="swiper-button swiper-button-prev" type="button">
+              <svg width="34" height="12" viewBox="0 0 34 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5.28571 10L1 6M1 6L5.28571 2M1 6L33 6" stroke="white" stroke-width="2" stroke-linecap="square"
+                  stroke-linejoin="round" />
+              </svg>
+            </button>
+
+            <button class="swiper-button swiper-button-next" type="button">
+              <svg width="34" height="12" viewBox="0 0 34 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M28.7143 10L33 6M33 6L28.7143 2M33 6L1 6" stroke="white" stroke-width="2"
+                  stroke-linecap="square" stroke-linejoin="round" />
+              </svg>
+            </button>
+
+            <div class="swiper-pagination"></div>
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+
   </main>
 
   <!-- подвал -->
@@ -276,18 +365,27 @@
         <!-- Кнопка закрытия окна  -->
         <button class="modal__close js-close-modal click" type="button" title="Закрыть окно">
           <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M1 1L17 17" stroke="#03B6FC" stroke-width="2"/>
-            <path d="M17 1L1 17" stroke="#03B6FC" stroke-width="2"/>
-            </svg>
+            <path d="M1 1L17 17" stroke="#03B6FC" stroke-width="2" />
+            <path d="M17 1L1 17" stroke="#03B6FC" stroke-width="2" />
+          </svg>
         </button>
       </div>
     </div>
   </section>
 
+  <!-- библиотеки  -->
+  <script src="./libs/fslightbox.min.js"></script>
+  <script src="./libs/SmoothScroll.min.js"></script>
+  <script src="./libs/simplebar.min.js"></script>
+  <script src="./libs/swiper-bundle.min.js"></script>
+
   <script src="./js/parts/header-sticky.js"></script>
   <script src="./js/parts/menu-open.js"></script>
   <script src="./js/parts/modals.js"></script>
-  <script src="./js/parts/just-main-margin.js"></script>
+  <!-- <script src="./js/parts/just-main-margin.js"></script> -->
+
+  <!-- Слайдеры  -->
+  <script src="./js/swiper-sliders.js"></script>
 
 
   <script src="./js/main.js"></script>

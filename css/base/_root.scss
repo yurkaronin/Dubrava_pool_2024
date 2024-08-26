@@ -15,4 +15,29 @@
   --modal-icon: #03b6fc;
   --modal-hover: #0057be;
   --modal-text: --text;
+
+  --swiper-navigation-size: 96px;
+  --swiper-navigation-sides-offset: 0;
+  --swiper-navigation-top-offset: 50%;
+  --swiper-pagination-bullet-horizontal-gap: 8px;
+  --swiper-pagination-bullet-width: 8px;
+  --swiper-pagination-bullet-height: 8px;
+  --swiper-pagination-color: #fff;
+  --swiper-pagination-bullet-inactive-color: transparent;
+  --swiper-pagination-bullet-inactive-opacity: 1;
+  --swiper-pagination-bottom: 80px;
+
+  @media (max-width: 1379px) {
+    --swiper-navigation-size: 80px;
+    --swiper-pagination-bottom: 32px;
+  }
+
+  @media (max-width: 1023px) {
+    --swiper-navigation-size: 70px;
+  }
+
+  @media (max-width: 767px) {
+    --swiper-navigation-size: 50px;
+    --swiper-pagination-bottom: 33px;
+  }
 }
