@@ -1,0 +1,9 @@
+.catalog-preview {
+  display: grid;
+  gap: 40px 32px;
+  grid-template-columns: repeat(2, 1fr);
+
+  @media (max-width: 1023px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

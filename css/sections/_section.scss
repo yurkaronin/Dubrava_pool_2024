@@ -1,6 +1,17 @@
 .section {
   max-width: 100%;
   width: 100%;
-  overflow: hidden;
+  padding-top: 75px;
+  padding-bottom: 80px;
+  &__head {
+    margin-bottom: 45px;
+  }
 
+  @media (max-width: 767px) {
+    padding-top: 40px;
+    padding-bottom: 50px;
+    &__head {
+      margin-bottom: 35px;
+    }
+  }
 }

@@ -5,8 +5,16 @@
     font-weight: 400;
     font-size: 64px;
     line-height: 1;
+    color: var(--darkblue);
+    font-style: normal;
+    margin-bottom: 20px;
 
     span {
       font-style: italic;
+    }
+
+    @media (max-width: 767px) {
+      font-size: 35px;
+      margin-bottom: 15px;
     }
   }
