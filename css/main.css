@@ -738,6 +738,12 @@ input[type=radio].visually-hidden {
   height: var(--swiper-navigation-size);
   z-index: 10;
   cursor: pointer;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.swiper-button:hover {
+  background-color: var(--blue);
+  border: 1px solid var(--blue);
 }
 .swiper-button svg {
   width: initial;
