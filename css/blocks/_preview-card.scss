@@ -23,6 +23,7 @@
     max-width: max-content;
     align-items: center;
     margin-bottom: 32px;
+
     &:after {
       content: "";
       display: block;
@@ -31,6 +32,13 @@
       background-color: var(--lightblue);
       margin-left: 16px;
       flex-shrink: 0;
+      transition: all 0.3s;
+    }
+    &:hover {
+      &:after {
+        background-color: var(--blue);
+        width: 40px;
+      }
     }
   }
   &__list {

@@ -10,6 +10,7 @@
   --grey: #5b637b;
   --bg: #f8f8f8;
   --white: #fff;
+  --custom-1: rgba(91, 99, 123, 0.3);
   --modal-bg: rgba(0, 87, 190, 0.7);
   --modal-icon: #03b6fc;
   --modal-hover: #0057be;
@@ -488,9 +489,9 @@ input[type=radio].visually-hidden {
   font-weight: 700;
   font-size: 14px;
   text-transform: uppercase;
-  color: #fff;
+  color: var(--white);
   border: none;
-  min-height: 56px;
+  min-height: 48px;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
   position: relative;
@@ -516,6 +517,16 @@ input[type=radio].visually-hidden {
   -webkit-transform: scale(1);
           transform: scale(1);
   border-radius: 32px;
+}
+.button--transparent {
+  color: var(--grey);
+}
+.button--transparent::before {
+  background-color: transparent;
+  border: 1px solid var(--custom-1);
+}
+.button:hover {
+  color: var(--white);
 }
 .button:hover::before {
   background: var(--blue);
@@ -999,6 +1010,12 @@ input[type=radio].visually-hidden {
   margin-left: 16px;
   -ms-flex-negative: 0;
       flex-shrink: 0;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.preview-card__title:hover:after {
+  background-color: var(--blue);
+  width: 40px;
 }
 .preview-card__list {
   display: grid;

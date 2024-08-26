@@ -11,9 +11,9 @@
   font-weight: 700;
   font-size: 14px;
   text-transform: uppercase;
-  color: #fff;
+  color: var(--white);
   border: none;
-  min-height: 56px;
+  min-height: 48px;
   transition: all 0.3s;
   position: relative;
 
@@ -38,7 +38,16 @@
     border-radius: 32px;
   }
 
+  &--transparent {
+    color: var(--grey);
+    &::before {
+      background-color: transparent;
+      border: 1px solid var(--custom-1);
+    }
+  }
+
   &:hover {
+    color: var(--white);
     &::before {
       background: var(--blue);
       transform: scale(1.07);
