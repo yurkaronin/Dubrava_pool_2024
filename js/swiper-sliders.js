@@ -21,6 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
       },
       pagination: {
         el: ".hero .swiper-pagination",
+        clickable: true,
       },
     });
 

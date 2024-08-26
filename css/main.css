@@ -756,6 +756,15 @@ input[type=radio].visually-hidden {
 .swiper-pagination {
   z-index: 1;
 }
+.swiper-pagination-bullet {
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.swiper-pagination-bullet:hover {
+  background-color: var(--blue);
+  border: 1px solid var(--blue);
+  scale: 2;
+}
 
 .swiper-pagination-bullet {
   border: 2px solid var(--swiper-pagination-color);
