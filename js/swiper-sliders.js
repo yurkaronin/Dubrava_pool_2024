@@ -30,7 +30,37 @@ document.addEventListener("DOMContentLoaded", function () {
       var currentIndex = heroTextSlider.realIndex;
       heroPhotoSlider.slideToLoop(currentIndex);
     });
-  }
+  };
+
+  if (document.querySelector(".prices-and-services")) {
+    var heroTextSlider = new Swiper(".js-prices-and-services-slider", {
+      loop: true,
+      spaceBetween: 32,
+      slidesPerView: 1,
+      autoHeight: true,
+      navigation: {
+        nextEl: ".js-prices-and-services-slider .swiper-button-next",
+        prevEl: ".js-prices-and-services-slider .swiper-button-prev",
+      },
+      pagination: {
+        el: ".js-prices-and-services-slider .swiper-pagination",
+        clickable: true,
+      },
+
+      breakpoints: {
+        //       320: {
+        //         slidesPerView: 1,
+        //       },
+        //       767: {
+        //         slidesPerView: 1,
+        //       },
+              1379: {
+                slidesPerView: 2,
+              },
+            },
+    });
+  };
+
 
   // Слайдер на детальной странице ОН
   // .js-place-card-slider
