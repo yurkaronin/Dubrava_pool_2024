@@ -11,7 +11,16 @@
     padding-top: 40px;
     padding-bottom: 50px;
     &__head {
-      margin-bottom: 35px;
+      margin-bottom: 20px;
+    }
+    &__head-grid {
+      display: grid;
+      gap: 10px;
+      grid-template-columns: 1fr auto;
+
+      .title {
+        margin: 0;
+      }
     }
   }
 }

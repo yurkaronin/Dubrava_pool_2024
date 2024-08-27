@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
       var currentIndex = heroTextSlider.realIndex;
       heroPhotoSlider.slideToLoop(currentIndex);
     });
-  };
+  }
 
   if (document.querySelector(".prices-and-services")) {
     var heroTextSlider = new Swiper(".js-prices-and-services-slider", {
@@ -39,12 +39,22 @@ document.addEventListener("DOMContentLoaded", function () {
       slidesPerView: 1,
       autoHeight: true,
       navigation: {
-        nextEl: ".js-prices-and-services-slider .swiper-button-next",
-        prevEl: ".js-prices-and-services-slider .swiper-button-prev",
-      },
-      pagination: {
-        el: ".js-prices-and-services-slider .swiper-pagination",
-        clickable: true,
+        nextEl: [
+          document.querySelector(
+            ".js-prices-and-services-slider .swiper-button-next"
+          ),
+          document.querySelector(
+            ".prices-and-services .swiper-button-group .swiper-button-next"
+          ),
+        ],
+        prevEl: [
+          document.querySelector(
+            ".js-prices-and-services-slider .swiper-button-prev"
+          ),
+          document.querySelector(
+            ".prices-and-services .swiper-button-group .swiper-button-prev"
+          ),
+        ],
       },
 
       breakpoints: {
@@ -54,13 +64,12 @@ document.addEventListener("DOMContentLoaded", function () {
         //       767: {
         //         slidesPerView: 1,
         //       },
-              1379: {
-                slidesPerView: 2,
-              },
-            },
+        1379: {
+          slidesPerView: 2,
+        },
+      },
     });
-  };
-
+  }
 
   // Слайдер на детальной странице ОН
   // .js-place-card-slider

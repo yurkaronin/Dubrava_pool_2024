@@ -82,16 +82,31 @@
       margin-bottom: 8px;
     }
   }
+  &--mod {
+    .preview-card__image {
+      height: 336px;
+    }
+  }
 
   @media (max-width: 1379px) {
     &__image {
       height: 250px;
+    }
+    &--mod {
+      .preview-card__image {
+        height: 336px;
+      }
     }
   }
 
   @media (max-width: 1023px) {
     &__image {
       height: 390px;
+    }
+    &--mod {
+      .preview-card__image {
+        height: 300px;
+      }
     }
   }
 
@@ -118,6 +133,12 @@
     &__footer {
       gap: 10px;
       grid-template-columns: repeat(1, 1fr);
+    }
+
+    &--mod {
+      .preview-card__image {
+        height: 205px;
+      }
     }
   }
 }

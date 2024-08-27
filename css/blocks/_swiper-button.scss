@@ -20,4 +20,15 @@
   &::before {
     display: none;
   }
+  &--mod {
+    border: 1px solid var(--lightblue);
+    color: var(--lightblue);
+
+    path {
+      stroke: currentColor;
+    }
+    &:hover {
+      color: var(--white);
+    }
+  }
 }
