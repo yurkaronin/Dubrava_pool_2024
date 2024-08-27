@@ -1665,14 +1665,14 @@ input[type=radio].visually-hidden {
   top: 0;
   z-index: 1;
 }
-.hero__photo::before {
+.hero__photo::after {
   content: "";
   display: block;
   width: 100%;
   height: 100%;
   position: absolute;
   left: 0;
-  right: 0;
+  top: 0;
   background-color: rgba(0, 2, 35, 0.3);
   z-index: 2;
 }
@@ -1796,6 +1796,111 @@ input[type=radio].visually-hidden {
   }
   .catalog-preview__slider .swiper-slide {
     opacity: 1;
+  }
+}
+
+.simple-promo {
+  position: relative;
+  padding: 0;
+}
+.simple-promo__photo-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+.simple-promo__photo-bg:after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 2, 35, 0.5);
+  z-index: 2;
+}
+.simple-promo__photo-bg img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.simple-promo__group {
+  position: relative;
+  z-index: 2;
+  color: var(--white);
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-bottom: 80px;
+  padding-top: 80px;
+  min-height: 800px;
+}
+.simple-promo__lead {
+  color: inherit;
+  display: block;
+  margin: 0;
+  font-weight: 400;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+.simple-promo__title {
+  color: inherit;
+  margin: 0;
+  font-weight: 400;
+  font-size: 80px;
+  margin-bottom: 17px;
+}
+.simple-promo__details {
+  color: inherit;
+  display: block;
+  margin: 0;
+  font-weight: 300;
+  font-size: 24px;
+  margin-bottom: 24px;
+}
+@media (max-width: 1379px) {
+  .simple-promo__title {
+    font-size: 64px;
+  }
+}
+@media (max-width: 1023px) {
+  .simple-promo__title {
+    font-size: 48px;
+  }
+  .simple-promo__details {
+    font-size: 18px;
+  }
+}
+@media (max-width: 767px) {
+  .simple-promo__lead {
+    font-size: 14px;
+  }
+  .simple-promo__title {
+    font-size: 35px;
+  }
+  .simple-promo__details {
+    font-size: 16px;
+  }
+  .simple-promo__group {
+    padding-bottom: 50px;
+    padding-top: 50px;
+    min-height: 670px;
   }
 }
 
