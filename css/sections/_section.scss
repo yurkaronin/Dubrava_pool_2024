@@ -6,6 +6,15 @@
   &__head {
     margin-bottom: 45px;
   }
+  &__head-grid {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 1fr auto;
+
+    .title {
+      margin: 0;
+    }
+  }
 
   @media (max-width: 767px) {
     padding-top: 40px;
@@ -13,14 +22,6 @@
     &__head {
       margin-bottom: 20px;
     }
-    &__head-grid {
-      display: grid;
-      gap: 10px;
-      grid-template-columns: 1fr auto;
 
-      .title {
-        margin: 0;
-      }
-    }
   }
 }

@@ -58,18 +58,36 @@ document.addEventListener("DOMContentLoaded", function () {
       },
 
       breakpoints: {
-        //       320: {
-        //         slidesPerView: 1,
-        //       },
-        //       767: {
-        //         slidesPerView: 1,
-        //       },
         1379: {
           slidesPerView: 2,
         },
       },
     });
   }
+  if (document.querySelector(".offers")) {
+  var offersSwiper = new Swiper(".js-offers-slider", {
+    slidesPerView: 1,
+    spaceBetween: 0,
+    loop: true,
+
+    navigation: {
+        nextEl: ".offers .swiper-button-next",
+        prevEl: ".offers .swiper-button-prev",
+      },
+
+      breakpoints: {
+              // 320: {
+              //   slidesPerView: 1,
+              // },
+              769: {
+                slidesPerView: 1.3,
+              },
+              1025: {
+                slidesPerView: 2,
+              },
+            },
+  });
+}
 
   // Слайдер на детальной странице ОН
   // .js-place-card-slider
