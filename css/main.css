@@ -1362,6 +1362,70 @@ input[type=radio].visually-hidden {
   display: none !important;
 }
 
+.advantages-list {
+  display: grid;
+  gap: 42px 32px;
+  grid-template-columns: repeat(3, 1fr);
+}
+.advantages-list__icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 40px;
+  height: 40px;
+  margin-bottom: 15px;
+}
+.advantages-list__text {
+  margin: 0;
+  font-family: var(--second-family);
+  font-weight: 400;
+  font-size: 16px;
+  text-transform: uppercase;
+  color: var(--darkblue);
+}
+
+.custom-link {
+  display: grid;
+  gap: 8px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  max-width: -webkit-max-content;
+  max-width: -moz-max-content;
+  max-width: max-content;
+  grid-template-columns: 1fr auto;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--lightblue);
+}
+.custom-link__icon {
+  width: 24px;
+  height: 18px;
+}
+.custom-link__icon svg {
+  overflow: visible;
+}
+.custom-link__icon path {
+  stroke: currentColor;
+}
+.custom-link__move {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
+}
+.custom-link:hover {
+  color: var(--blue);
+}
+.custom-link:hover .custom-link__move {
+  -webkit-transform: translateX(8px);
+          transform: translateX(8px);
+}
+
 .header {
   position: fixed;
   top: 0;
@@ -2142,6 +2206,12 @@ input[type=radio].visually-hidden {
   .contacts__map {
     height: 275px;
   }
+}
+
+.advantages__grid {
+  display: grid;
+  gap: 32px;
+  grid-template-columns: repeat(2, 1fr);
 }
 
 .footer {
