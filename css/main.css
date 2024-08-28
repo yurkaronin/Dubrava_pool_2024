@@ -1394,6 +1394,12 @@ input[type=radio].visually-hidden {
 .advantages-list__item:hover .advantages-list__icon {
   color: var(--blue);
 }
+@media (max-width: 767px) {
+  .advantages-list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px 16px;
+  }
+}
 
 .custom-link {
   display: grid;
@@ -1481,6 +1487,75 @@ input[type=radio].visually-hidden {
 }
 .creative-slider .swiper-button-prev {
   left: 72px;
+}
+@media (max-width: 1379px) {
+  .creative-slider {
+    width: 688px;
+    height: 704px;
+    position: relative;
+    top: auto;
+    left: auto;
+    right: auto;
+    bottom: auto;
+  }
+  .creative-slider .swiper {
+    width: 688px;
+    height: 516px;
+    position: relative;
+  }
+  .creative-slider__prev-photo {
+    width: 208px;
+    height: 156px;
+  }
+  .creative-slider__next-photo {
+    width: 288px;
+    height: 216px;
+  }
+  .creative-slider .swiper-button-next {
+    right: 40px;
+  }
+  .creative-slider .swiper-button-prev {
+    left: 40px;
+  }
+}
+@media (max-width: 1023px) {
+  .creative-slider {
+    width: 100%;
+  }
+  .creative-slider .swiper {
+    width: 100%;
+  }
+}
+@media (max-width: 767px) {
+  .creative-slider {
+    height: 340px;
+  }
+  .creative-slider .swiper {
+    width: 100%;
+    height: 250px;
+    top: 37px;
+  }
+  .creative-slider__prev-photo {
+    width: 102px;
+    height: 76px;
+    left: 58px;
+  }
+  .creative-slider__next-photo {
+    width: 140px;
+    height: 105px;
+    right: 82px;
+  }
+  .creative-slider .swiper-button {
+    width: 50px;
+    height: 50px;
+    margin-top: -25px;
+  }
+  .creative-slider .swiper-button-next {
+    right: 15px;
+  }
+  .creative-slider .swiper-button-prev {
+    left: 15px;
+  }
 }
 
 .header {
@@ -1711,6 +1786,9 @@ input[type=radio].visually-hidden {
   width: 100%;
   padding-top: 75px;
   padding-bottom: 80px;
+}
+.section--mod {
+  background-color: #f3f8fe;
 }
 .section__head {
   margin-bottom: 45px;
@@ -2281,6 +2359,21 @@ input[type=radio].visually-hidden {
   width: 100%;
   grid-column: 1/6;
   height: 768px;
+}
+@media (max-width: 1379px) {
+  .advantages__grid {
+    display: block;
+  }
+  .advantages__slider {
+    position: relative;
+    width: initial;
+    max-width: -webkit-max-content;
+    max-width: -moz-max-content;
+    max-width: max-content;
+    margin: 0 auto;
+    height: initial;
+    margin-bottom: 40px;
+  }
 }
 
 .footer {

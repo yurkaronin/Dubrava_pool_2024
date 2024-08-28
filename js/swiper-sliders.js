@@ -93,7 +93,7 @@ document.addEventListener("DOMContentLoaded", function () {
   if (document.querySelector(".creative-slider")) {
     // Инициализация слайдера
     var creativeSlider = new Swiper(".js-creative-slider", {
-      direction: "vertical",
+      // direction: "vertical",
       slidesPerView: 1,
       spaceBetween: 32,
       loop: true,

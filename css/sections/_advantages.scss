@@ -17,4 +17,19 @@
     height: 768px;
   }
 
+  @media (max-width: 1379px) {
+    &__grid {
+      display: block;
+    }
+
+    &__slider {
+      position: relative;
+      width: initial;
+      max-width: max-content;
+      margin: 0 auto;
+      height: initial;
+      margin-bottom: 40px;
+    }
+  }
+
 }
