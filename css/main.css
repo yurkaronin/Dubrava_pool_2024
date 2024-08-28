@@ -360,15 +360,6 @@ textarea {
   width: 100%;
 }
 
-ul,
-p,
-h1,
-h2,
-h3 {
-  margin: 0;
-  padding: 0;
-}
-
 a {
   text-decoration: none;
   color: inherit;
@@ -378,6 +369,7 @@ a {
 
 address {
   font-style: normal;
+  font-family: var(--second-family);
 }
 
 input::-webkit-outer-spin-button,
@@ -1299,6 +1291,37 @@ input[type=radio].visually-hidden {
   }
 }
 
+.contacts-list__item {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: auto 1fr;
+  margin-bottom: 40px;
+  font-weight: 400;
+  font-size: 16px;
+  text-transform: uppercase;
+  color: var(--darkblue);
+}
+.contacts-list__item address {
+  font-style: normal;
+  font-family: var(--second-family);
+}
+.contacts-list__item a {
+  color: var(--lightblue);
+  font-family: var(--second-family);
+  display: block;
+}
+.contacts-list__item [href^="tel:"] {
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--darkblue);
+  font-family: var(--font3);
+}
+.contacts-list__item span {
+  font-size: 14px;
+  color: var(--grey);
+  text-transform: initial;
+}
+
 .header {
   position: fixed;
   top: 0;
@@ -2021,6 +2044,23 @@ input[type=radio].visually-hidden {
 }
 .offers .swiper-slide:hover {
   z-index: 2;
+}
+
+.contacts__text {
+  display: block;
+  margin: 0;
+  margin-bottom: 50px;
+}
+.contacts__grid {
+  display: grid;
+  gap: 32px;
+  grid-template-columns: repeat(2, 1fr);
+}
+.contacts__map {
+  position: relative;
+  z-index: 10;
+  height: 496px;
+  width: 100%;
 }
 
 .footer {

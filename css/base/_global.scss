@@ -64,15 +64,6 @@ textarea {
   width: 100%;
 }
 
-ul,
-p,
-h1,
-h2,
-h3 {
-  margin: 0;
-  padding: 0;
-}
-
 a {
   text-decoration: none;
   color: inherit;
@@ -82,6 +73,7 @@ a {
 
 address {
   font-style: normal;
+  font-family: var(--second-family);
 }
 
 input::-webkit-outer-spin-button,
