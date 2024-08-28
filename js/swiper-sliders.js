@@ -89,55 +89,61 @@ document.addEventListener("DOMContentLoaded", function () {
       },
     });
   }
-
   if (document.querySelector(".creative-slider")) {
-    // Инициализация слайдера
-    var creativeSlider = new Swiper(".js-creative-slider", {
-      // direction: "vertical",
-      slidesPerView: 1,
-      spaceBetween: 32,
-      loop: true,
-      navigation: {
-        nextEl: ".js-creative-slider .swiper-button-next",
-        prevEl: ".js-creative-slider .swiper-button-prev",
-      },
-      on: {
-        init: function () {
-          updateThumbnails(this); // Обновляем миниатюры при инициализации
-        },
-        slideChange: function () {
-          updateThumbnails(this); // Обновляем миниатюры при смене слайда
-        },
-      },
-    });
+    // Получаем все элементы слайдеров на странице
+    document
+      .querySelectorAll(".creative-slider")
+      .forEach(function (sliderElement) {
+        // Инициализация каждого слайдера
+        var creativeSlider = new Swiper(
+          sliderElement.querySelector(".js-creative-slider"),
+          {
+            slidesPerView: 1,
+            spaceBetween: 32,
+            loop: true,
+            navigation: {
+              nextEl: sliderElement.querySelector(".swiper-button-next"),
+              prevEl: sliderElement.querySelector(".swiper-button-prev"),
+            },
+            on: {
+              init: function () {
+                updateThumbnails(this, sliderElement); // Обновляем миниатюры при инициализации
+              },
+              slideChange: function () {
+                updateThumbnails(this, sliderElement); // Обновляем миниатюры при смене слайда
+              },
+            },
+          }
+        );
 
-    // Функция для обновления миниатюр
-    function updateThumbnails(swiper) {
-      // Получаем текущий активный слайд
-      var currentSlide = swiper.slides[swiper.activeIndex];
+        // Функция для обновления миниатюр
+        function updateThumbnails(swiper, sliderElement) {
+          // Получаем текущий активный слайд
+          var currentSlide = swiper.slides[swiper.activeIndex];
 
-      // Получаем следующий и предыдущий слайды с помощью Swiper методов
-      var prevSlide = currentSlide.previousElementSibling
-        ? currentSlide.previousElementSibling
-        : swiper.slides[swiper.slides.length - 1];
-      var nextSlide = currentSlide.nextElementSibling
-        ? currentSlide.nextElementSibling
-        : swiper.slides[0];
+          // Получаем следующий и предыдущий слайды с помощью Swiper методов
+          var prevSlide = currentSlide.previousElementSibling
+            ? currentSlide.previousElementSibling
+            : swiper.slides[swiper.slides.length - 1];
+          var nextSlide = currentSlide.nextElementSibling
+            ? currentSlide.nextElementSibling
+            : swiper.slides[0];
 
-      // Проверка на случай, если слайды зациклены (loop)
-      if (prevSlide.classList.contains("swiper-slide-duplicate")) {
-        prevSlide = swiper.slides[swiper.slides.length - 2];
-      }
-      if (nextSlide.classList.contains("swiper-slide-duplicate")) {
-        nextSlide = swiper.slides[1];
-      }
+          // Проверка на случай, если слайды зациклены (loop)
+          if (prevSlide.classList.contains("swiper-slide-duplicate")) {
+            prevSlide = swiper.slides[swiper.slides.length - 2];
+          }
+          if (nextSlide.classList.contains("swiper-slide-duplicate")) {
+            nextSlide = swiper.slides[1];
+          }
 
-      // Обновляем миниатюры
-      document.querySelector(".creative-slider__prev-photo img").src =
-        prevSlide.querySelector("img").src;
-      document.querySelector(".creative-slider__next-photo img").src =
-        nextSlide.querySelector("img").src;
-    }
+          // Обновляем миниатюры для конкретного слайдера
+          sliderElement.querySelector(".creative-slider__prev-photo img").src =
+            prevSlide.querySelector("img").src;
+          sliderElement.querySelector(".creative-slider__next-photo img").src =
+            nextSlide.querySelector("img").src;
+        }
+      });
   }
 
   // Слайдер на детальной странице ОН

@@ -1368,6 +1368,12 @@ input[type=radio].visually-hidden {
   display: grid;
   gap: 42px 32px;
   grid-template-columns: repeat(3, 1fr);
+  max-width: -webkit-max-content;
+  max-width: -moz-max-content;
+  max-width: max-content;
+}
+.advantages-list--mod {
+  grid-template-columns: repeat(2, 1fr);
 }
 .advantages-list__icon {
   display: -webkit-box;

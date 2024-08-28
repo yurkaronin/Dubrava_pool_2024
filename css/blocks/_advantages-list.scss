@@ -2,6 +2,10 @@
   display: grid;
   gap: 42px 32px;
   grid-template-columns: repeat(3, 1fr);
+  max-width: max-content;
+  &--mod {
+    grid-template-columns: repeat(2, 1fr);
+  }
 
 
   &__icon {
