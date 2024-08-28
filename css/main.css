@@ -2426,21 +2426,6 @@ input[type=radio].visually-hidden {
   }
 }
 
-.click {
-  -webkit-transition: -webkit-transform 0.2s;
-  transition: -webkit-transform 0.2s;
-  transition: transform 0.2s;
-  transition: transform 0.2s, -webkit-transform 0.2s;
-}
-.click:hover, .click:focus {
-  -webkit-transform: translateY(-2px);
-          transform: translateY(-2px);
-}
-.click:active {
-  -webkit-transform: translateY(1px);
-          transform: translateY(1px);
-  -webkit-transition: -webkit-transform 0.1s ease;
-  transition: -webkit-transform 0.1s ease;
-  transition: transform 0.1s ease;
-  transition: transform 0.1s ease, -webkit-transform 0.1s ease;
+.inner-page .header {
+  background-color: var(--lightblue);
 }/*# sourceMappingURL=main.css.map */
