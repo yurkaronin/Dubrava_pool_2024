@@ -1,0 +1,47 @@
+.creative-slider {
+  position: absolute;
+  right: -32px;
+  top: 0;
+  width: 736px;
+  height: 768px;
+
+  .swiper {
+    position: absolute;
+    width: 768px;
+    height: 552px;
+    z-index: 2;
+    top: 84px;
+  }
+
+  &__prev-photo {
+    position: absolute;
+    z-index: 0;
+    width: 224px;
+    height: 168px;
+    left: 128px;
+    top: 0;
+    transition: all 0.3s;
+  }
+
+  &__next-photo {
+    position: absolute;
+    z-index: 3;
+    width: 352px;
+    height: 264px;
+    right: 128px;
+    bottom: 0;
+    transition: all 0.3s;
+  }
+
+  .swiper-button {
+    width: 80px;
+    height: 80px;
+    margin-top: -40px;
+  }
+  .swiper-button-next {
+    right: 72px;
+  }
+  .swiper-button-prev {
+    left: 72px;
+  }
+}

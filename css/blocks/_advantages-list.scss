@@ -3,11 +3,18 @@
   gap: 42px 32px;
   grid-template-columns: repeat(3, 1fr);
 
+
   &__icon {
     display: flex;
     width: 40px;
     height: 40px;
     margin-bottom: 15px;
+    color: var(--lightblue);
+    transition: all 0.3s;
+
+    svg path {
+      stroke: currentColor;
+    }
   }
   &__text {
     margin: 0;
@@ -16,5 +23,9 @@
     font-size: 16px;
     text-transform: uppercase;
     color: var(--darkblue);
+  }
+
+  &__item:hover &__icon {
+    color: var(--blue);
   }
 }

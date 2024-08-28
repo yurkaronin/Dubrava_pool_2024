@@ -64,30 +64,74 @@ document.addEventListener("DOMContentLoaded", function () {
       },
     });
   }
-  if (document.querySelector(".offers")) {
-  var offersSwiper = new Swiper(".js-offers-slider", {
-    slidesPerView: 1,
-    spaceBetween: 0,
-    loop: true,
 
-    navigation: {
+  if (document.querySelector(".offers")) {
+    var offersSwiper = new Swiper(".js-offers-slider", {
+      slidesPerView: 1,
+      spaceBetween: 0,
+      loop: true,
+
+      navigation: {
         nextEl: ".offers .swiper-button-next",
         prevEl: ".offers .swiper-button-prev",
       },
 
       breakpoints: {
-              // 320: {
-              //   slidesPerView: 1,
-              // },
-              769: {
-                slidesPerView: 1.3,
-              },
-              1025: {
-                slidesPerView: 2,
-              },
-            },
-  });
-}
+        // 320: {
+        //   slidesPerView: 1,
+        // },
+        769: {
+          slidesPerView: 1.3,
+        },
+        1025: {
+          slidesPerView: 2,
+        },
+      },
+    });
+  }
+
+  if (document.querySelector(".creative-slider")) {
+    // Инициализация слайдера
+    var creativeSlider = new Swiper(".js-creative-slider", {
+      // direction: "vertical",
+      slidesPerView: 1,
+      spaceBetween: 32,
+      loop: true,
+      navigation: {
+        nextEl: ".js-creative-slider .swiper-button-next",
+        prevEl: ".js-creative-slider .swiper-button-prev",
+      },
+      on: {
+        init: function () {
+          updateThumbnails(this); // Обновляем миниатюры при инициализации
+        },
+        slideChange: function () {
+          updateThumbnails(this); // Обновляем миниатюры при смене слайда
+        },
+      },
+    });
+
+    // Функция для обновления миниатюр
+    function updateThumbnails(swiper) {
+      // Получаем индексы предыдущего и следующего слайда
+      var prevIndex =
+        swiper.realIndex - 1 < 0
+          ? swiper.slides.length - 1
+          : swiper.realIndex - 1;
+      var nextIndex =
+        swiper.realIndex + 1 >= swiper.slides.length ? 0 : swiper.realIndex + 1;
+
+      // Получаем изображения предыдущего и следующего слайда
+      var prevSlideImg = swiper.slides[prevIndex].querySelector("img").src;
+      var nextSlideImg = swiper.slides[nextIndex].querySelector("img").src;
+
+      // Обновляем миниатюры
+      document.querySelector(".creative-slider__prev-photo img").src =
+        prevSlideImg;
+      document.querySelector(".creative-slider__next-photo img").src =
+        nextSlideImg;
+    }
+  }
 
   // Слайдер на детальной странице ОН
   // .js-place-card-slider

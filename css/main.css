@@ -625,6 +625,8 @@ input[type=radio].visually-hidden {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   text-wrap: balance;
+  margin: 0;
+  margin-bottom: 10px;
 }
 .label svg {
   display: inline-block;
@@ -1374,6 +1376,12 @@ input[type=radio].visually-hidden {
   width: 40px;
   height: 40px;
   margin-bottom: 15px;
+  color: var(--lightblue);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.advantages-list__icon svg path {
+  stroke: currentColor;
 }
 .advantages-list__text {
   margin: 0;
@@ -1382,6 +1390,9 @@ input[type=radio].visually-hidden {
   font-size: 16px;
   text-transform: uppercase;
   color: var(--darkblue);
+}
+.advantages-list__item:hover .advantages-list__icon {
+  color: var(--blue);
 }
 
 .custom-link {
@@ -1424,6 +1435,52 @@ input[type=radio].visually-hidden {
 .custom-link:hover .custom-link__move {
   -webkit-transform: translateX(8px);
           transform: translateX(8px);
+}
+
+.creative-slider {
+  position: absolute;
+  right: -32px;
+  top: 0;
+  width: 736px;
+  height: 768px;
+}
+.creative-slider .swiper {
+  position: absolute;
+  width: 768px;
+  height: 552px;
+  z-index: 2;
+  top: 84px;
+}
+.creative-slider__prev-photo {
+  position: absolute;
+  z-index: 0;
+  width: 224px;
+  height: 168px;
+  left: 128px;
+  top: 0;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.creative-slider__next-photo {
+  position: absolute;
+  z-index: 3;
+  width: 352px;
+  height: 264px;
+  right: 128px;
+  bottom: 0;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.creative-slider .swiper-button {
+  width: 80px;
+  height: 80px;
+  margin-top: -40px;
+}
+.creative-slider .swiper-button-next {
+  right: 72px;
+}
+.creative-slider .swiper-button-prev {
+  left: 72px;
 }
 
 .header {
@@ -2211,7 +2268,19 @@ input[type=radio].visually-hidden {
 .advantages__grid {
   display: grid;
   gap: 32px;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(12, 1fr);
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+.advantages__col {
+  grid-column: 7/13;
+}
+.advantages__slider {
+  position: relative;
+  width: 100%;
+  grid-column: 1/6;
+  height: 768px;
 }
 
 .footer {
