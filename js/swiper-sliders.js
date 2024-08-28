@@ -93,7 +93,7 @@ document.addEventListener("DOMContentLoaded", function () {
   if (document.querySelector(".creative-slider")) {
     // Инициализация слайдера
     var creativeSlider = new Swiper(".js-creative-slider", {
-      // direction: "vertical",
+      direction: "vertical",
       slidesPerView: 1,
       spaceBetween: 32,
       loop: true,
@@ -113,23 +113,30 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Функция для обновления миниатюр
     function updateThumbnails(swiper) {
-      // Получаем индексы предыдущего и следующего слайда
-      var prevIndex =
-        swiper.realIndex - 1 < 0
-          ? swiper.slides.length - 1
-          : swiper.realIndex - 1;
-      var nextIndex =
-        swiper.realIndex + 1 >= swiper.slides.length ? 0 : swiper.realIndex + 1;
+      // Получаем текущий активный слайд
+      var currentSlide = swiper.slides[swiper.activeIndex];
 
-      // Получаем изображения предыдущего и следующего слайда
-      var prevSlideImg = swiper.slides[prevIndex].querySelector("img").src;
-      var nextSlideImg = swiper.slides[nextIndex].querySelector("img").src;
+      // Получаем следующий и предыдущий слайды с помощью Swiper методов
+      var prevSlide = currentSlide.previousElementSibling
+        ? currentSlide.previousElementSibling
+        : swiper.slides[swiper.slides.length - 1];
+      var nextSlide = currentSlide.nextElementSibling
+        ? currentSlide.nextElementSibling
+        : swiper.slides[0];
+
+      // Проверка на случай, если слайды зациклены (loop)
+      if (prevSlide.classList.contains("swiper-slide-duplicate")) {
+        prevSlide = swiper.slides[swiper.slides.length - 2];
+      }
+      if (nextSlide.classList.contains("swiper-slide-duplicate")) {
+        nextSlide = swiper.slides[1];
+      }
 
       // Обновляем миниатюры
       document.querySelector(".creative-slider__prev-photo img").src =
-        prevSlideImg;
+        prevSlide.querySelector("img").src;
       document.querySelector(".creative-slider__next-photo img").src =
-        nextSlideImg;
+        nextSlide.querySelector("img").src;
     }
   }
 
